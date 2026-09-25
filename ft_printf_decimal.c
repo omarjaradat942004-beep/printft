@@ -6,27 +6,30 @@
 /*   By: omajarad <omar.jaradat1@learner.42.tech>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:01:16 by omajarad          #+#    #+#             */
-/*   Updated: 2026/09/24 20:22:31 by omajarad         ###   ########.fr       */
+/*   Updated: 2026/09/25 13:47:07 by omajarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-size_t	digit_count(long numb, int *counter)
+static size_t	digit_count(long numb)
 {
+	int	counter;
+
+	counter = 0;
 	if (numb < 0)
 	{
-		(*counter)++;
+		counter++;
 		numb = -numb;
 	}
 	while (numb > 9)
 	{
-		(*counter)++;
+		counter++;
 		numb /= 10;
 	}
-	(*counter)++;
-	return (*counter);
+	counter++;
+	return (counter);
 }
 
 int	ft_printf_decimal(int num)
@@ -36,8 +39,7 @@ int	ft_printf_decimal(int num)
 	char	*str;
 
 	numb = (long)num;
-	counter = 0;
-	counter = digit_count(numb, &counter);
+	counter = digit_count(numb);
 	str = ft_itoa(num);
 	write(1, str, counter);
 	free(str);

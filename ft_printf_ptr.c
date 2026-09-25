@@ -6,7 +6,7 @@
 /*   By: omajarad <omar.jaradat1@learner.42.tech>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:18:18 by omajarad          #+#    #+#             */
-/*   Updated: 2026/09/24 20:39:14 by omajarad         ###   ########.fr       */
+/*   Updated: 2026/09/25 11:21:08 by omajarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_printf_ptr(void *ptr)
 
 	counter = 15;
 	num = (unsigned long)ptr;
-	if (num == 0)
+	if (!ptr)
 	{
-		write(1, "0x0", 3);
-		return (3);
+		write(1, "(nil)", 5);
+		return (5);
 	}
 	while (num != 0)
 	{

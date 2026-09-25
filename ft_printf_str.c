@@ -6,7 +6,7 @@
 /*   By: omajarad <omajarad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:13:17 by omajarad          #+#    #+#             */
-/*   Updated: 2026/09/24 20:37:16 by omajarad         ###   ########.fr       */
+/*   Updated: 2026/09/25 11:04:24 by omajarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int	ft_printf_str(char *str)
 	size_t	index;
 	size_t	counter;
 
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	index = 0;
 	counter = 0;
 	while (str[index])

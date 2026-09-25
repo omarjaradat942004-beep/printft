@@ -6,21 +6,24 @@
 /*   By: omajarad <omar.jaradat1@learner.42.tech>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 19:47:16 by omajarad          #+#    #+#             */
-/*   Updated: 2026/09/24 20:20:57 by omajarad         ###   ########.fr       */
+/*   Updated: 2026/09/25 13:50:17 by omajarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	digit_count(unsigned long num, int *counter)
+static size_t	digit_count(unsigned long num)
 {
+	int	counter;
+
+	counter = 0;
 	while (num > 9)
 	{
-		(*counter)++;
+		counter++;
 		num /= 10;
 	}
-	(*counter)++;
-	return (*counter);
+	counter++;
+	return (counter);
 }
 
 int	ft_printf_unint(unsigned int num)
@@ -29,7 +32,7 @@ int	ft_printf_unint(unsigned int num)
 	int		counter2;
 	char	*str;
 
-	counter = digit_count(num, &counter);
+	counter = digit_count(num);
 	counter2 = counter;
 	counter--;
 	str = malloc(counter2 * sizeof(char) + 1);

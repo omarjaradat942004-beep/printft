@@ -4,6 +4,15 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS =  ft_itoa.c \
+	ft_printf.c \
+	ft_printf_char.c \
+	ft_printf_decimal.c \
+	ft_printf_lower.c \
+	ft_printf_ptr.c \
+	ft_printf_str.c \
+	ft_printf_unint.c \
+	ft_printf_upper.c
+
 
 
 
