@@ -1,7 +1,8 @@
 *This activity has been created as part of the 42 curriculum by omajarad.*
 
-ft_printf
-# Description
+# ft_printf
+
+## Description
 
 The goal of this activity is to recreate the standard C library function printf() by implementing a custom function called ft_printf().
 
@@ -36,8 +37,9 @@ The following conversions are supported:
 
 The final library is called libftprintf.a.
 
-# Instructions
-Compilation
+## Instructions
+
+### Compilation
 
 The project is compiled using the provided Makefile.
 
@@ -69,7 +71,7 @@ make fclean removes object files and the compiled library.
 
 make re performs a complete recompilation.
 
-Using the library
+### Using the library
 
 To use ft_printf() in another C program, include the project's header:
 
@@ -98,14 +100,15 @@ The program can then be compiled with:
 
 cc main.c -L. -lftprintf
 
-Creating the library
+### Creating the library
 
 The project uses the ar command to create the static library, as required by the activity.
 
 The libtool command is not used.
 
-Algorithm and Data Structures
-General algorithm
+## Algorithm and Data Structures
+
+### General algorithm
 
 The main algorithm used by ft_printf() is a sequential scan of the format string.
 
@@ -147,7 +150,7 @@ Continue until the end of the format string.
 
 Return the total number of characters printed.
 
-Conversion dispatch
+### Conversion dispatch
 
 The conversion handling is separated from the main function.
 
@@ -165,7 +168,7 @@ else if (ptr[index] == 'd' || ptr[index] == 'i')
 
 This keeps the main ft_printf() function relatively simple and allows each conversion to have its own implementation.
 
-Number conversion algorithm
+### Number conversion algorithm
 
 Decimal and hexadecimal numbers are converted recursively or iteratively by repeatedly dividing the number by its base.
 
@@ -207,7 +210,7 @@ giving:
 
 ff
 
-Pointer conversion
+### Pointer conversion
 
 The %p conversion receives a void * argument.
 
@@ -220,7 +223,7 @@ A pointer is displayed with the hexadecimal prefix:
 
 followed by the hexadecimal representation of the address.
 
-Data structures
+### Data structures
 
 The implementation does not require complex data structures.
 
@@ -238,7 +241,7 @@ The format string is processed directly without copying it into another data str
 
 No dynamic memory allocation is required for the core implementation.
 
-Variadic Functions
+### Variadic Functions
 
 One of the main concepts studied in this project is variadic functions.
 
@@ -270,7 +273,7 @@ retrieves an integer argument.
 
 Finally, va_end() releases the resources associated with the variable argument list.
 
-Return Value
+### Return Value
 
 Like the original printf(), ft_printf() returns the number of characters written.
 
@@ -295,7 +298,7 @@ For example:
 
 This makes it possible for the final return value to represent the total number of characters printed.
 
-Error and Edge-Case Testing
+### Error and Edge-Case Testing
 
 The implementation should be compared with the original printf() using different combinations of conversions.
 
@@ -340,14 +343,16 @@ consecutive conversions
 
 The return value of ft_printf() should also be compared with the return value of printf().
 
-Project Structure
+### Project Structure
 
-A possible project structure is:
+The actual project structure is:
 
+```
 .
 ├── Makefile
 ├── README.md
 ├── ft_printf.h
+├── libft.h
 ├── ft_printf.c
 ├── ft_printf_char.c
 ├── ft_printf_str.c
@@ -356,14 +361,14 @@ A possible project structure is:
 ├── ft_printf_lower.c
 ├── ft_printf_upper.c
 ├── ft_printf_ptr.c
-└── libft/
+└── ft_itoa.c
+```
 
+The header file `ft_printf.h` contains the prototype of `ft_printf()` and the declarations of the helper conversion functions.
 
-The exact organization may differ depending on the implementation.
+`libft.h` declares `ft_itoa()`, which is implemented in `ft_itoa.c` and used by `ft_printf_decimal.c` to convert signed integers to strings. The rest of the standard libft function prototypes are declared in `libft.h` for reference but are not implemented or used in this project.
 
-The header file ft_printf.h contains the prototype of ft_printf() and the required declarations for the helper functions.
-
-Allowed Functions
+### Allowed Functions
 
 The following external functions are authorized for this activity:
 
@@ -380,7 +385,7 @@ Libft is also authorized.
 
 The project does not use the original printf() internally to perform any conversion.
 
-# Resources
+## Resources
 
 The following resources were useful for understanding the concepts involved in this activity:
 
@@ -398,7 +403,7 @@ The C standard library documentation for integer and pointer types.
 
 The existing Libft project and its utility functions.
 
-## AI Usage
+### AI Usage
 
 AI was used as a learning and debugging assistant during the activity.
 
@@ -418,7 +423,7 @@ Review individual helper functions and provide debugging hints.
 
 The implementation itself was developed as part of the activity. AI was used to understand concepts, review code, and guide debugging rather than to replace the learning process or the implementation work.
 
-Conclusion
+## Conclusion
 
 The ft_printf activity provides practical experience with variadic functions, formatted output, integer representation, hexadecimal conversion, pointers, and static libraries.
 
