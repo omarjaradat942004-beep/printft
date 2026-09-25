@@ -6,7 +6,7 @@
 /*   By: omajarad <omar.jaradat1@learner.42.tech>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:01:16 by omajarad          #+#    #+#             */
-/*   Updated: 2026/09/25 13:47:07 by omajarad         ###   ########.fr       */
+/*   Updated: 2026/09/25 14:51:34 by omajarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,3 @@ int	ft_printf_decimal(int num)
 	free(str);
 	return (counter);
 }
-/*
-#include <stdio.h>
-int main()
-{
-        int    num = 2147483647;
-	printf("\n%d",ft_printf_decimal(num));
-}
-*/

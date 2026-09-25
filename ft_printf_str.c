@@ -6,7 +6,7 @@
 /*   By: omajarad <omajarad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:13:17 by omajarad          #+#    #+#             */
-/*   Updated: 2026/09/25 11:04:24 by omajarad         ###   ########.fr       */
+/*   Updated: 2026/09/25 14:52:40 by omajarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printf_str(char *str)
 {
 	size_t	index;
-	size_t	counter;
+	int		counter;
 
 	if (!str)
 	{
@@ -32,10 +32,3 @@ int	ft_printf_str(char *str)
 	}
 	return (counter);
 }
-/*
-int main()
-{
-	char str[]="omar jaradat";
-	ft_printf_str(str);
-}
-*/

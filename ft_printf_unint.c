@@ -6,7 +6,7 @@
 /*   By: omajarad <omar.jaradat1@learner.42.tech>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 19:47:16 by omajarad          #+#    #+#             */
-/*   Updated: 2026/09/25 13:50:17 by omajarad         ###   ########.fr       */
+/*   Updated: 2026/09/25 14:52:59 by omajarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,3 @@ int	ft_printf_unint(unsigned int num)
 	free(str);
 	return (counter2);
 }
-/*
-#include <stdio.h>
-int main()
-{
-        unsigned int	num = 4294967295;
-        printf("\n%d",ft_printf_unint(num));
-}
-*/

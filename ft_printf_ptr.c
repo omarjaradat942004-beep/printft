@@ -6,7 +6,7 @@
 /*   By: omajarad <omar.jaradat1@learner.42.tech>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:18:18 by omajarad          #+#    #+#             */
-/*   Updated: 2026/09/25 11:21:08 by omajarad         ###   ########.fr       */
+/*   Updated: 2026/09/25 14:52:08 by omajarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printf_ptr(void *ptr)
 {
 	unsigned long	num;
-	size_t			counter;
+	int				counter;
 	char			re;
 	char			str[17];
 
@@ -35,15 +35,6 @@ int	ft_printf_ptr(void *ptr)
 	}
 	str[16] = '\0';
 	write(1, "0x", 2);
-	write(1, &str[counter + 1], 16 - counter);
+	write(1, &str[counter + 1], 15 - counter);
 	return (15 - (counter - 2));
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char str[]="omar";
-	void	*ptr = str;
-	printf("\n%d",ft_printf_ptr(ptr));
-}
-*/
